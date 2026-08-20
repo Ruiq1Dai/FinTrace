@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JRKJ · 金融证据工作台</title>
+  <link rel="stylesheet" href="./styles.css">
+  <style>
+    .audit-strip{display:grid;grid-template-columns:1.1fr 1.3fr 1fr;gap:18px;background:#fff;border:1px solid #e6ebef;border-radius:6px;padding:18px 22px;margin-bottom:18px}
+    .audit-strip h3{font-size:13px;margin:0 0 10px}.audit-list{display:flex;flex-wrap:wrap;gap:6px}.audit-step{background:#f2f6fb;border:1px solid #dce7f2;border-radius:4px;padding:5px 7px;color:#446176;font-size:10px}.audit-step b{color:#2d6cdf;margin-right:4px}.audit-empty{color:#9aa6ae;font-size:10px}.execution-state{display:flex;flex-direction:column;gap:7px;color:#647681;font-size:11px}.execution-state span{background:#f4f7f8;padding:6px 8px;border-radius:4px}@media(max-width:1050px){.audit-strip{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">J</span><div><strong>JRKJ</strong><small>金融证据工作台</small></div></div>
+    <div class="top-actions"><span class="status-dot"></span><span>数据版本 2026.08.18</span><button class="icon-button" title="设置">⚙</button><div class="avatar">研</div></div>
+  </header>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="nav-label">工作空间</div>
+      <button class="nav-item active"><span>⌂</span>研究总览</button>
+      <button class="nav-item"><span>⌕</span>证据检索</button>
+      <button class="nav-item"><span>◈</span>股东图谱</button>
+      <button class="nav-item"><span>▤</span>财报分析</button>
+      <button class="nav-item"><span>◷</span>风险时间线</button>
+      <div class="nav-divider"></div>
+      <div class="nav-label">最近研究</div>
+      <button class="recent-item"><b>600238.SH</b><span>增收不增现复核</span><em>刚刚</em></button>
+      <button class="recent-item"><b>601033.SH</b><span>研报交叉验证</span><em>昨天</em></button>
+      <button class="recent-item"><b>300838.SZ</b><span>股东结构梳理</span><em>8月16日</em></button>
+      <div class="sidebar-bottom"><div class="memory-chip"><span>◉</span><div><b>长期记忆已启用</b><small>6 条证据 · 当前版本</small></div></div></div>
+    </aside>
+    <main class="main">
+      <section class="workspace-head"><div><p class="eyebrow">研究总览 / 单公司</p><h1>海南椰岛 <span>600238.SH</span></h1><p class="muted">母公司口径 · 最近报告期 2025-12-31 · 证据版本 ba3e499c2052d72243ba</p></div><div class="head-actions"><button class="secondary">↗ 导出报告</button><button class="primary">＋ 新建研究</button></div></section>
+      <section class="askbar"><div class="ask-icon">✦</div><input id="question" value="综合判断 600238.SH 最近三个报告期是否存在增收不增现迹象"><button id="askBtn" class="ask-button">运行分析 <span>⌘ ↵</span></button></section>
+      <div class="run-meta"><span class="running"><i></i> Agent 已完成分析</span><span>3 张表 · 11 条证据 · 2 个计算</span><span>耗时 8.4s</span></div>
+      <section class="answer-panel"><div class="panel-heading"><div><span class="section-kicker">结论</span><h2>未发现持续性“增收不增现”，但 2024 年曾出现阶段性背离</h2></div><span class="confidence medium">中等置信度</span></div><p class="answer-text">2023—2025 年营业收入持续增长，经营活动现金流由负转正但中间经历波动。2024 年收入同比增长 302.76%，经营现金流却恶化 132.38%，呈现阶段性“增收不增现”；2025 年经营现金流转正至 6,150.04 万元，现金回笼与收入同步改善。</p><div class="answer-footer"><span>口径：母公司报表</span><span>期间：年度口径可比</span><button class="text-button">查看推理链 →</button></div></section>
+      <section class="audit-strip" aria-live="polite"><div><span class="section-kicker">调查计划</span><h3>Agent Plan</h3><div id="plan-list" class="audit-list"><span class="audit-empty">提交问题后显示实际调查步骤</span></div></div><div><span class="section-kicker">工具调用</span><h3>Tool Calls</h3><div id="tool-call-list" class="audit-list"><span class="audit-empty">等待后端运行</span></div></div><div><span class="section-kicker">图谱与风险</span><h3>Execution State</h3><div id="execution-state" class="execution-state"><span>图谱：演示状态</span><span>策略：risk-policy-v1</span></div></div></section>
+      <div class="content-grid">
+        <section class="card chart-card"><div class="card-head"><div><span class="section-kicker">趋势对比</span><h3>收入与经营现金流</h3></div><div class="legend"><span><i class="blue"></i>营业收入</span><span><i class="green"></i>经营现金流</span></div></div><div class="chart"><div class="y-labels"><span>3.5 亿</span><span>2.3 亿</span><span>1.2 亿</span><span>0</span><span>-0.7 亿</span></div><div class="plot"><div class="gridline g1"></div><div class="gridline g2"></div><div class="gridline g3"></div><div class="gridline g4"></div><svg viewBox="0 0 620 220" preserveAspectRatio="none"><path class="area" d="M10 194 L210 158 L410 112 L610 26 L610 210 L10 210Z"/><polyline class="revenue-line" points="10,194 210,158 410,112 610,26"/><polyline class="cash-line" points="10,188 210,208 410,197 610,174"/><g class="points"><circle cx="10" cy="194" r="4"/><circle cx="210" cy="158" r="4"/><circle cx="410" cy="112" r="4"/><circle cx="610" cy="26" r="4"/></g></svg><div class="x-labels"><span>2023</span><span>2024</span><span>2025H1</span><span>2025</span></div></div></div></section>
+        <section class="card metrics-card"><div class="card-head"><div><span class="section-kicker">关键指标</span><h3>最新报告期</h3></div><button class="more">•••</button></div><div class="metric-list"><div class="metric"><span>营业收入</span><strong>3.28 <small>亿元</small></strong><em class="up">↑ 307.31%</em></div><div class="metric"><span>净利润</span><strong class="negative">-871.37 <small>万元</small></strong><em class="down">↓ 87.37%<sup>*</sup></em></div><div class="metric"><span>经营现金流</span><strong>6,150.04 <small>万元</small></strong><em class="up">↑ 205.19%</em></div><div class="metric"><span>应收账款</span><strong>2,082.48 <small>万元</small></strong><em class="neutral">↑ 17.46%</em></div></div><div class="metric-note">* 亏损收窄，百分比按绝对值计算</div></section>
+      </div>
+      <div class="lower-grid">
+        <section class="card evidence-card"><div class="card-head"><div><span class="section-kicker">证据流</span><h3>可审计来源 <span class="count">11</span></h3></div><button class="filter">全部来源⌄</button></div><div class="evidence-list"><div class="evidence-row"><span class="source-icon table">▤</span><div><b>financial_income</b><p>2025-12-31 · oper_rev 328,367,159.64 · net_profit -8,713,696.22</p></div><span class="source-tag">财务报表</span></div><div class="evidence-row"><span class="source-icon cash">↗</span><div><b>financial_cashflow</b><p>2025-12-31 · net_cash_flows_oper_act 61,500,375.22</p></div><span class="source-tag">财务报表</span></div><div class="evidence-row"><span class="source-icon balance">▥</span><div><b>financial_balance</b><p>2024—2025 · monetary_cap / acct_rcv / inventories</p></div><span class="source-tag">财务报表</span></div><button class="load-more">展开全部证据 · 还有 8 条</button></div></section>
+        <section class="card memory-card"><div class="card-head"><div><span class="section-kicker">长上下文</span><h3>记忆上下文包</h3></div><span class="version">v ba3e499c</span></div><div class="memory-summary"><div class="memory-ring"><strong>11</strong><small>事实</small></div><div><p>已召回当前公司的历史证据，并按问题主题裁剪。</p><span>3 张表 · 4 个报告期 · 2 个确定性计算</span></div></div><div class="memory-bars"><div><span>直接证据</span><i><b style="width:82%"></b></i><em>7</em></div><div><span>历史上下文</span><i><b style="width:45%"></b></i><em>4</em></div><div><span>待核实问题</span><i><b class="warning-bar" style="width:22%"></b></i><em>1</em></div></div><button class="text-button">打开上下文检查器 →</button></section>
+      </div>
+      <section class="card timeline-card"><div class="card-head"><div><span class="section-kicker">关联视图</span><h3>股东与风险事件</h3></div><div class="tabs"><button class="tab active">股东变化</button><button class="tab">风险公告</button></div></div><div class="timeline"><div class="event"><span class="event-date">2026-03-31</span><div class="event-dot blue-dot"></div><div><b>北京燕赵汇金、王松涛进入前十大</b><p>与 000955.SZ、600365.SH 等存在同名交叉，仅作为待核实线索。</p></div><span class="event-kind">图谱</span></div><div class="event"><span class="event-date">2025-12-31</span><div class="event-dot green-dot"></div><div><b>经营现金流由负转正</b><p>61,500,375.22 元；与收入增长同步改善。</p></div><span class="event-kind">财务</span></div><div class="event"><span class="event-date">2024-06-20</span><div class="event-dot red-dot"></div><div><b>交易所通报批评</b><p>当前仅有公告标题和链接，具体原因需解析 PDF 正文。</p></div><span class="event-kind">公告</span></div></div></section>
+    </main>
+  </div>
+  <script src="./app.js"></script>
+</body>
+</html>

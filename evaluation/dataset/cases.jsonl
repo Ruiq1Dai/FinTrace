@@ -1,0 +1,4 @@
+{"case_id":"DOC-001","kind":"document","company":"600238.SH","query":"行政监管措施","expected_min_records":1}
+{"case_id":"FIN-001","kind":"financial","companies":["600238.SH","601033.SH","300838.SZ"],"expected_metrics":["revenue","net_profit","operating_cash_flow","accounts_receivable","inventories"]}
+{"case_id":"RISK-001","kind":"risk","signal_families":["revenue_cashflow","receivables"],"external_evidence":["announcement_body"],"comparable_periods":2,"expected_risk_code":"high"}
+{"case_id":"GRAPH-001","kind":"graph","start":"000001.SZ","target":"600875.SH","period":"20250331","max_hops":2,"expected_min_paths":1}

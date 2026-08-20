@@ -1,0 +1,21 @@
+{
+  "policy_version": "risk-policy-v1",
+  "minimum_cases": ["600238.SH", "601033.SH", "300838.SZ"],
+  "required_assets": [
+    {
+      "name": "announcement_body",
+      "path": "data/enriched/announcement_documents.jsonl",
+      "description": "Selected announcement PDF text with page and source metadata"
+    },
+    {
+      "name": "consolidated_statements",
+      "path": "data/enriched/consolidated_statements.parquet",
+      "description": "Selected-company consolidated income, balance, and cash-flow records"
+    },
+    {
+      "name": "entity_master",
+      "path": "data/enriched/entity_master.jsonl",
+      "description": "Stable entity IDs, aliases, effective dates, and verification sources"
+    }
+  ]
+}

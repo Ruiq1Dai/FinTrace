@@ -1,0 +1,297 @@
+{
+  "protocol": "deterministic-capability-v1",
+  "graph_enabled": true,
+  "variants": [
+    {
+      "variant": "llm_only",
+      "cases": [
+        {
+          "case_id": "DOC-001",
+          "passed": false,
+          "evidence_count": 0,
+          "tool_success": true,
+          "detail": "capability excluded by ablation"
+        },
+        {
+          "case_id": "FIN-001",
+          "passed": false,
+          "evidence_count": 0,
+          "tool_success": true,
+          "detail": "capability excluded by ablation"
+        },
+        {
+          "case_id": "RISK-001",
+          "passed": false,
+          "evidence_count": 0,
+          "tool_success": true,
+          "detail": "capability excluded by ablation"
+        },
+        {
+          "case_id": "GRAPH-001",
+          "passed": false,
+          "evidence_count": 0,
+          "tool_success": true,
+          "detail": "capability excluded by ablation"
+        }
+      ],
+      "metrics": {
+        "answer_accuracy": 0.0,
+        "tool_success_rate": 0.0,
+        "evidence_coverage": 0.0,
+        "unsupported_claim_rate": 0.0
+      }
+    },
+    {
+      "variant": "retrieval",
+      "cases": [
+        {
+          "case_id": "DOC-001",
+          "passed": true,
+          "evidence_count": 2,
+          "tool_success": true,
+          "detail": {
+            "count": 2
+          }
+        },
+        {
+          "case_id": "FIN-001",
+          "passed": true,
+          "evidence_count": 45,
+          "tool_success": true,
+          "detail": {
+            "rows": 135,
+            "companies": [
+              "300838.SZ",
+              "600238.SH",
+              "601033.SH"
+            ]
+          }
+        },
+        {
+          "case_id": "RISK-001",
+          "passed": false,
+          "evidence_count": 0,
+          "tool_success": true,
+          "detail": "capability excluded by ablation"
+        },
+        {
+          "case_id": "GRAPH-001",
+          "passed": false,
+          "evidence_count": 0,
+          "tool_success": true,
+          "detail": "capability excluded by ablation"
+        }
+      ],
+      "metrics": {
+        "answer_accuracy": 1.0,
+        "tool_success_rate": 1.0,
+        "evidence_coverage": 1.0,
+        "unsupported_claim_rate": 0.0
+      }
+    },
+    {
+      "variant": "retrieval_calculation",
+      "cases": [
+        {
+          "case_id": "DOC-001",
+          "passed": true,
+          "evidence_count": 2,
+          "tool_success": true,
+          "detail": {
+            "count": 2
+          }
+        },
+        {
+          "case_id": "FIN-001",
+          "passed": true,
+          "evidence_count": 45,
+          "tool_success": true,
+          "detail": {
+            "rows": 135,
+            "companies": [
+              "300838.SZ",
+              "600238.SH",
+              "601033.SH"
+            ]
+          }
+        },
+        {
+          "case_id": "RISK-001",
+          "passed": true,
+          "evidence_count": 1,
+          "tool_success": true,
+          "detail": {
+            "policy_version": "risk-policy-v1",
+            "risk_code": "high",
+            "risk_level": "高风险线索",
+            "signal_families": [
+              "receivables",
+              "revenue_cashflow"
+            ],
+            "external_evidence": [
+              "announcement_body"
+            ],
+            "strong_external_evidence": [
+              "announcement_body"
+            ],
+            "comparable_periods": 2,
+            "official_finding": false,
+            "rationale": "至少两个独立异常类别持续两个可比期间，并有强外部证据交叉支持。",
+            "limitation": "风险线索不等于财务造假；已确认监管事实必须引用原始文书。"
+          }
+        },
+        {
+          "case_id": "GRAPH-001",
+          "passed": false,
+          "evidence_count": 0,
+          "tool_success": true,
+          "detail": "capability excluded by ablation"
+        }
+      ],
+      "metrics": {
+        "answer_accuracy": 1.0,
+        "tool_success_rate": 1.0,
+        "evidence_coverage": 1.0,
+        "unsupported_claim_rate": 0.0
+      }
+    },
+    {
+      "variant": "retrieval_calculation_graph",
+      "cases": [
+        {
+          "case_id": "DOC-001",
+          "passed": true,
+          "evidence_count": 2,
+          "tool_success": true,
+          "detail": {
+            "count": 2
+          }
+        },
+        {
+          "case_id": "FIN-001",
+          "passed": true,
+          "evidence_count": 45,
+          "tool_success": true,
+          "detail": {
+            "rows": 135,
+            "companies": [
+              "300838.SZ",
+              "600238.SH",
+              "601033.SH"
+            ]
+          }
+        },
+        {
+          "case_id": "RISK-001",
+          "passed": true,
+          "evidence_count": 1,
+          "tool_success": true,
+          "detail": {
+            "policy_version": "risk-policy-v1",
+            "risk_code": "high",
+            "risk_level": "高风险线索",
+            "signal_families": [
+              "receivables",
+              "revenue_cashflow"
+            ],
+            "external_evidence": [
+              "announcement_body"
+            ],
+            "strong_external_evidence": [
+              "announcement_body"
+            ],
+            "comparable_periods": 2,
+            "official_finding": false,
+            "rationale": "至少两个独立异常类别持续两个可比期间，并有强外部证据交叉支持。",
+            "limitation": "风险线索不等于财务造假；已确认监管事实必须引用原始文书。"
+          }
+        },
+        {
+          "case_id": "GRAPH-001",
+          "passed": true,
+          "evidence_count": 8,
+          "tool_success": true,
+          "detail": {
+            "backend": "neo4j",
+            "count": 4
+          }
+        }
+      ],
+      "metrics": {
+        "answer_accuracy": 1.0,
+        "tool_success_rate": 1.0,
+        "evidence_coverage": 1.0,
+        "unsupported_claim_rate": 0.0
+      }
+    },
+    {
+      "variant": "full_system",
+      "cases": [
+        {
+          "case_id": "DOC-001",
+          "passed": true,
+          "evidence_count": 2,
+          "tool_success": true,
+          "detail": {
+            "count": 2
+          }
+        },
+        {
+          "case_id": "FIN-001",
+          "passed": true,
+          "evidence_count": 45,
+          "tool_success": true,
+          "detail": {
+            "rows": 135,
+            "companies": [
+              "300838.SZ",
+              "600238.SH",
+              "601033.SH"
+            ]
+          }
+        },
+        {
+          "case_id": "RISK-001",
+          "passed": true,
+          "evidence_count": 1,
+          "tool_success": true,
+          "detail": {
+            "policy_version": "risk-policy-v1",
+            "risk_code": "high",
+            "risk_level": "高风险线索",
+            "signal_families": [
+              "receivables",
+              "revenue_cashflow"
+            ],
+            "external_evidence": [
+              "announcement_body"
+            ],
+            "strong_external_evidence": [
+              "announcement_body"
+            ],
+            "comparable_periods": 2,
+            "official_finding": false,
+            "rationale": "至少两个独立异常类别持续两个可比期间，并有强外部证据交叉支持。",
+            "limitation": "风险线索不等于财务造假；已确认监管事实必须引用原始文书。"
+          }
+        },
+        {
+          "case_id": "GRAPH-001",
+          "passed": true,
+          "evidence_count": 8,
+          "tool_success": true,
+          "detail": {
+            "backend": "neo4j",
+            "count": 4
+          }
+        }
+      ],
+      "metrics": {
+        "answer_accuracy": 1.0,
+        "tool_success_rate": 1.0,
+        "evidence_coverage": 1.0,
+        "unsupported_claim_rate": 0.0
+      }
+    }
+  ]
+}

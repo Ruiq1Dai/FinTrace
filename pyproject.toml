@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jrkj"
+version = "0.1.0"
+description = "Auditable agentic financial investigation for listed-company risk analysis"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "openpyxl>=3.0",
+    "pandas>=2.0",
+    "pyarrow>=14,<22",
+    "python-dotenv>=1.0",
+    "neo4j>=5.0,<6.0",
+]
+
+[project.optional-dependencies]
+download = ["paramiko>=3.0"]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+jrkj = "jrkj.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = [".", "src"]
+testpaths = ["tests"]
